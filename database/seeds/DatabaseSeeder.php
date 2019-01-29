@@ -11,7 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-      $chatroom = factory()->create();
+      $chatroom = factory(App\ChatRoom::class, 3)
+            ->create()
+            ->each(function () {
+
+            });
         //$this->call(UsersTableSeeder::class);
     }
 }
