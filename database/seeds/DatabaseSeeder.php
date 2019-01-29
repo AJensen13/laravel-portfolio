@@ -11,11 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-      $chatroom = factory(App\ChatRoom::class, 3)
-            ->create()
-            ->each(function () {
-
-            });
+        factory(App\User::class, 10)->create();
+        factory(App\ChatRoom::class, 1)->create();
+        factory(App\Board::class, 3)->create();
+        factory(App\Comment::class,30)->create();
         //$this->call(UsersTableSeeder::class);
     }
 }
