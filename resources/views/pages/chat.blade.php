@@ -6,6 +6,7 @@
     <div class="chat-form">
         <form>
         <textarea></textarea>
+        @csrf
         <button type="submit">Submit</button>
         </form>
     </div>

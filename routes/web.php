@@ -22,3 +22,7 @@ Route::get('/profile', function () {
 Route::get('/chat', function () {
     return view('pages.chat');
 });
+
+Route::get('/login', function () {
+    return view('pages.login');
+});
