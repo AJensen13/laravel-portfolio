@@ -12,13 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('pages.login');
 });
 
 Route::get('/profile', function () {
-    return view('profile');
+    return view('pages.profile');
 });
 
 Route::get('/chat', function () {
-    return view('chat');
+    return view('pages.chat');
 });

@@ -1,6 +1,6 @@
-<!doctype html>
-<head></head>
-<body>
+@extends('layouts.app')
+
+@section('content')
     <h1>Profile Page</h1>
     <div>
         <img src="#" />
@@ -8,5 +8,4 @@
         <p>Username: </p>
         <p>Email: </p>
     </div>
-</body>
-</html>
+@endsection
