@@ -8,7 +8,7 @@
 
     <body>
 
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-3">
                     @include('includes.sidebar')
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        <footer>
+        <footer class="col-12">
             @include('includes.footer')
         </footer>
 
