@@ -7,3 +7,12 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+.chat-display {
+    height: 700px;
+}
+
+.chat-form textarea {
+    resize: none;
+}

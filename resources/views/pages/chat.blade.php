@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Chat Page</h1>
-    <div class="chat-display"></div>
-    <div class="chat-form">
-        <form>
-        <textarea></textarea>
-        @csrf
-        <button type="submit">Submit</button>
-        </form>
-    </div>
+    <h1>Board Name</h1>
+            <div class="chat-display col-12 bg-white border border-light overflow-auto"></div>
+            <div class="chat-form mt-3">
+                <form>
+                <textarea class="col-12 border border-light rounded"></textarea>
+                @csrf
+                </form>
+            </div>
 @endsection

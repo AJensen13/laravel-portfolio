@@ -8,13 +8,13 @@
 
     <body>
 
-        <div class="container-fluid">
+        <div class="container-fluid mt-3">
             <div class="row">
-                <div class="col-3 border-right">
+                <div class="col-1 border-right">
                     @include('includes.sidebar')
                 </div>
 
-                <div class="col-9">
+                <div class="col-9 offset-1">
                     @yield('content')
                 </div>
             </div>
