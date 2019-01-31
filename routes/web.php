@@ -23,6 +23,8 @@ Route::get('/chat', function () {
     return view('pages.chat');
 });
 
+Route::get('board', 'BoardController@show');
+
 Route::get('/login', function () {
     return view('pages.login');
 });

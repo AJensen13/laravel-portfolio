@@ -46,7 +46,9 @@ class BoardController extends Controller
      */
     public function show(Board $board)
     {
-        //
+        $board = App\Board::where('id', $board);
+
+        return view('pages.chat', ['board' => $board]);
     }
 
     /**
