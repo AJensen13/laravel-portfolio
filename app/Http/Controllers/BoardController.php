@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Board;
+use Debugbar;
 use Illuminate\Http\Request;
 
 class BoardController extends Controller
@@ -44,11 +45,15 @@ class BoardController extends Controller
      * @param  \App\Board  $board
      * @return \Illuminate\Http\Response
      */
-    public function show(Board $board)
+    public function show(Board $board, $id)
     {
-        $board = App\Board::where('id', $board);
+        $mainboard = Board::where('id', $id)->first();
+        $allboards = Board::all();
 
-        return view('pages.chat', ['board' => $board]);
+        Debugbar::info($board);
+        Debugbar::info($allboards);
+
+        return view('pages.chat', ['mainboard' => $mainboard, "allboards" => $allboards]);
     }
 
     /**
