@@ -49,9 +49,11 @@ class BoardController extends Controller
     {
         $mainboard = Board::where('id', $id)->first();
         $allboards = Board::all();
+        $comments = $mainboard->comments;
 
-        Debugbar::info($board);
+        Debugbar::info($mainboard);
         Debugbar::info($allboards);
+        Debugbar::info($comments);
 
         return view('pages.chat', ['mainboard' => $mainboard, "allboards" => $allboards]);
     }
