@@ -15,14 +15,20 @@ Route::get('/', function () {
     return view('pages.login');
 });
 
-Route::get('/profile', function () {
-    return view('pages.profile');
-});
+Route::get('/profile', 'UserController@show');
 
 Route::get('/chat', function () {
     return view('pages.chat');
 });
 
+Route::get('/board/{id}', 'BoardController@show');
+
 Route::get('/login', function () {
-    return view('pages.login');
+    return view('auth.login');
 });
+
+Route::post('/comment', 'CommentController@store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

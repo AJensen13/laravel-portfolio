@@ -4,8 +4,8 @@
     <h1>Profile Page</h1>
     <div>
         <img src="#" />
-        <h3>User's Name</h3>
-        <p>Username: </p>
-        <p>Email: </p>
+        <h3>{{ $user->name }}</h3>
+        {{-- <p>Username: {{ $user->username }}</p> --}}
+        <p>Email: {{ $user->email }}</p>
     </div>
 @endsection
