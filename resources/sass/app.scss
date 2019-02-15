@@ -11,6 +11,14 @@
 
 .chat-display {
     height: 700px;
+
+    p {
+        font-size: 16px;
+    }
+    .name {
+        font-size: 14px;
+
+    }
 }
 
 .chat-form textarea {

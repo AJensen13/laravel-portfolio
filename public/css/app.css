@@ -10495,6 +10495,15 @@ a.text-dark:focus {
   height: 700px;
 }
 
+.chat-display p {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.chat-display .name {
+  font-size: 14px;
+}
+
 .chat-form textarea {
   resize: none;
 }
