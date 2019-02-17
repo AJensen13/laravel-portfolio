@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Debugbar;
 
 class CommentController extends Controller
 {
@@ -38,9 +39,22 @@ class CommentController extends Controller
     {
         $comment = new Comment;
 
-        $comment->text = $request->text;
-        $comment->user_id = Auth::id();
+        $comment->comment_text = $request->text;
+        $comment->user_id = $request->user;
         $comment->board_id = $request->board;
+
+        $comment->save();
+
+        Debugbar::info($comment);
+
+        $data = array(
+            'status' => 'success',
+            'msg' => 'Comment successfully saved',
+            'comment' => $comment,
+            'user' => Auth::user()->name
+        );
+
+        return response()->json($data, 200);
     }
 
     /**

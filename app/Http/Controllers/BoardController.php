@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Board;
 use Debugbar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BoardController extends Controller
 {
@@ -49,13 +50,11 @@ class BoardController extends Controller
     {
         $mainboard = Board::where('id', $id)->first();
         $allboards = Board::all();
-        $comments = $mainboard->comments;
+        $comments = DB::table('comments')->where('board_id', $mainboard->id)->groupBy('created_at')->orderBy('created_at', 'desc');
 
-        Debugbar::info($mainboard);
-        Debugbar::info($allboards);
         Debugbar::info($comments);
 
-        return view('pages.chat', ['mainboard' => $mainboard, "allboards" => $allboards]);
+        return view('pages.chat', ['mainboard' => $mainboard, "allboards" => $allboards, 'comments' => $comments]);
     }
 
     /**

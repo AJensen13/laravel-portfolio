@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('pages.login');
+    return view('pages.home');
 });
 
 Route::get('/profile', 'UserController@show');
